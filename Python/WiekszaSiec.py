@@ -5,16 +5,15 @@ class perceptron:
 
     def __init__(self,LR):
         self.weight = np.array([
-            [random.uniform(-0.5,0.5),random.uniform(-0.5,0.5),random.uniform(-0.5,0.5)],#wagi dla p1 (x1,x2,tryb)
-            [random.uniform(-0.5, 0.5), random.uniform(-0.5, 0.5), random.uniform(-0.5, 0.5)],#wagi dla p2
-            [random.uniform(-0.5, 0.5), random.uniform(-0.5, 0.5), random.uniform(-0.5, 0.5)],#wagi dla p3
-            [random.uniform(-0.5, 0.5), random.uniform(-0.5, 0.5), random.uniform(-0.5, 0.5)],#wagi dla p4
-        ]) #macierz wag dla naszej sieci
+            [random.uniform(-0.5,0.5),random.uniform(-0.5,0.5),random.uniform(-0.5,0.5)],
+            [random.uniform(-0.5, 0.5), random.uniform(-0.5, 0.5), random.uniform(-0.5, 0.5)],
+            [random.uniform(-0.5, 0.5), random.uniform(-0.5, 0.5), random.uniform(-0.5, 0.5)],
+            [random.uniform(-0.5, 0.5), random.uniform(-0.5, 0.5), random.uniform(-0.5, 0.5)],
+        ])
 
         self.weight_secound = np.array([random.uniform(-0.5,0.5),random.uniform(-0.5,0.5),random.uniform(-0.5,0.5),random.uniform(-0.5,0.5)])
         self.bias_secound = random.uniform(-0.5,0.5)
         self.LR = LR
-        # Zmień tę linię:
         self.bias = np.array([random.uniform(-0.5, 0.5), random.uniform(-0.5, 0.5), random.uniform(-0.5, 0.5),
                               random.uniform(-0.5, 0.5)])
 
@@ -44,17 +43,17 @@ class perceptron:
         self.AND_WYN = np.array([0,0,0,1])
 
         self.zestawuczenia = [
-            [self.OR_DANE, self.OR_WYN],#0 gdy 0 to uczymy OR  nastepnie zawsze przy waga [0] bo to wejscia a nasptenie wyubieramy zestaw
-            [self.AND_DANE, self.AND_WYN], #1 gdy 1 to uczymy AND
+            [self.OR_DANE, self.OR_WYN],
+            [self.AND_DANE, self.AND_WYN], 
             [self.XOR_DANE, self.XOR_WYN]]
 
         bladwag = 1
 
         while(bladwag > 0.001):
             AND_CZY_OR = random.randint(0,2)
-            zestaw = random.randint(0,3) #dosc skomplikowanie ale no po porstu mamy lsicie w lisice ktora ma maceirz i wektor
+            zestaw = random.randint(0,3) 
             p1 = (self.weight[0][0] * self.zestawuczenia[AND_CZY_OR][0][zestaw][0] + self.weight[0][1] * self.zestawuczenia[AND_CZY_OR][0][zestaw][1]
-                 + self.weight[0][2] * self.zestawuczenia[AND_CZY_OR][0][zestaw][2]) + self.bias[0] # x1*w1,x2*w2 tryb* w3
+                 + self.weight[0][2] * self.zestawuczenia[AND_CZY_OR][0][zestaw][2]) + self.bias[0] 
             p2 = (self.weight[1][0] * self.zestawuczenia[AND_CZY_OR][0][zestaw][0] + self.weight[1][1] *
                   self.zestawuczenia[AND_CZY_OR][0][zestaw][1]
                   + self.weight[1][2] * self.zestawuczenia[AND_CZY_OR][0][zestaw][2]) + self.bias[1]
@@ -75,7 +74,7 @@ class perceptron:
             p5 = 1 / (1 + np.exp(-p5))
 
             blad = self.zestawuczenia[AND_CZY_OR][1][zestaw] - p5
-            delta_p5 = blad * (p5 * (1-p5)) #pochodna sigmoidy
+            delta_p5 = blad * (p5 * (1-p5))
 
             self.weight_secound[0] += self.LR * delta_p5 * p1
             self.weight_secound[1] += self.LR * delta_p5 * p2
