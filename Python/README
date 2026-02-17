@@ -1,1 +1,7 @@
+Przedstawiam moje krótką dość prosty projekt, pierwszy kontakt z AI 
+Potrzebowałem projektu na przedmiot Algorytmy i Sturktury danych a że przedmiot w pierwszej części jest dość prosty postanowiłem wykonać coś swojego
 
+Mozemy zauważyc rozwiązanie problemu bramek logicznych AND, OR , XOR gdzie uczenie jesli chodzi o oddzielny problem AND i OR jest liniowy i dość prosty myśle, matematycnze podejście które bardzo chce pokazać ujawnia się w pliku WiekszaSiec.py problem 
+ktory rozwiazywaliśmy eskalował do wielowymiarowości gdzie musiałem przemapować i przerzucić myslenie z intuicyjnego 3D na 4D gdize uzyłem własnie 5 perceptronów do wytrenowania maszyny aby była wstanie wchodzić w tryby XOR AND OR i być wstanie
+rozwiązać bramke logiczną, jak wiemy jest to podstawa gora lodowej wrzucam to bardziej zajawkowo , oczywscie w miare mozliwosci dalej będę pielęgnował moją wiedze o AI ale narazie chciałbym skupić na podstawach matemtycznych jak Prawdopodbienstwo 
+czy kontynuacje nauki o Metoda Numerycznych
