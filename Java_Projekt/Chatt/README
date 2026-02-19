@@ -1,0 +1,54 @@
+Projekt: Prosty chat do komunikacji uzytkownikow
+Autor: Mikołaj Krotowski
+
+
+Co jest zrobione na dziś : 19.02
+
+Klasa serwer: Głowna klasa serce całego kodu to serwer bedzie obsługiwał wszystkie wiadomosci
+
+    Metody :
+        savelogs(): służy do zachowywania wiadomości danego użytkwoniak z innym użytkownikiem typ void
+
+        everwriter(): sprawdza czy kiedykolwiek dwójka uzytkowników keidykolwiek z sobą pisała zwraca nazwe zapisanej rozmowy
+        $$ Problem do naprawy towrzymy zawsze 1chat2 lub 2chat1 zmienic logike na zapisywanie chatu jako mniejsza liczba chat wieksza liczba $$
+
+        main(): Głowny serwer na ktorym jest wszystko odpalane słóży do pisania wyswieltnia wiadmosci ktore sa do niego wysylane wykrozsytuje dwie metody napsiane wyzej
+        obecnie przejmuej wiadomosci od uzytkowniak w formacie obiektu "WIADOMOSC" dane ktore przyjmuej to oepracja, id , klient czyli osoba do ktorej idzie wiadomosc no i sama wiadomsoc
+        pisze obecnie w niej logike obsługiwania oepracji ale własnie mysle przenies to do innej metody
+
+        ifChat() metoda ma służyć do znajdywania chatów które już istnieje miedzy dwoma uzytkownikami typ zwracany Boolena
+
+        FindChat()
+
+    Wyjatki:
+
+       ChatInitializationException: Błąd wyrzucany w momencie gdy uzytkownik chce wysłać wiadmosc do samego siebie narazie nie przeiwduje takiej opcji
+
+       NotFoundOperationException:  Błąd wyrzucany w momencie gdy ktos spróbuje uzyc operacji ktorej nie ma to znaczy wyjdzie poza wyslij doczytaj
+                                     *trzeba dodac osbługiwanie i po prostu ponowne uzycie ale to pozniej
+
+
+
+
+
+
+
+Klasa Wiadomosc: to ta klasa słuzy za za dostarczneie informajci od uzytkowniak potem nazwe trzeba zmienic ale to potem
+
+    Metody :
+        Wyślij(): słuzy do wyslania wiadomosci od uzytkowniak informajce w niej to ID_uzytkownika, klient czyli odbiorca , operacja ktora chcemy , oraz sama tersc wiadomosci
+
+        Jest tam prosta logika decydowania ze jesli chcemy wysalc wiadomosc to metoda sie odrazu konczy ewnetualnie jesli chcemy odczytac to czekamy na liste do odbioru
+
+Klasa Rang: Pomocnicza klasa do zapisywania jakie ID maja ze soba chat i w sumie to tyle
+
+Klasa Uzytkownik:To jego dane są przesyłane ma w sobie setery i getery w sumie moglismy uzyc recordu a nie sammeu to pisac ale no juz trudno niech tak zostanie mozliwe ze potem
+                przyda sie to do jakeigos logowanie a jak nie to sie usunike wszystko sie okaze z czasem dodawania
+
+
+Co trzeba dodać na dzień dzisiejszy zarys w głowie:
+        *połaczenie sie z Gitem
+        *dodanie javadoc
+
+
+
